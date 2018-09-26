@@ -1,5 +1,89 @@
 $primary-color : #444;
+$secondary-color : #eece1a;
 
+$show-home-image : true;
+$background-image : url(../images/bg.jpg);
+$background-opacity : 0.8;
+
+
+@mixin bg{
+    @if $show-home-image {
+        &#bg-img{
+            background : $background-image;
+            background-attachment: fixed;
+            background-size: cover;
+
+        }
+    }
+}
+
+@mixin easeOut {
+    transition: all 1s ease-out;    
+}
+* {
+    box-sizing: border-box;
+}
 body{
+    @include bg();
     background : $primary-color;
+    height: 100%;
+    margin :0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+
+h1,h2,h3{
+    margin:0;
+    font-weight: 400;
+
+    &.lg-heading{
+        color: white;
+        font-size:6rem;
+    }
+
+    &.sm-heading{
+        color: white;
+        margin-bottom : 2rem;
+        padding: 0.2rem 1rem;
+    }
+}
+
+a{
+    color:white;
+    text-decoration: none;
+
+}
+
+header {
+    position: fixed;
+    z-index: 2;
+    width:100%;
+}
+
+.secondary{
+    color : $secondary-color;
+}
+
+main {
+    padding: 4rem;
+    height: 100%;
+
+    .icons{
+        margin-top:1rem;
+
+        a{
+         padding: 0.4rem;
+         
+         &:hover{
+             color:$secondary-color;
+             @include easeOut();
+         }
+        }
+    }
+
+    &#home{
+        overflow: hidden;
+        h1 { margin-top : 20vh;}
+    }
 }
