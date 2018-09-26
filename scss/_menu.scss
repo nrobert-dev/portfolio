@@ -1,0 +1,67 @@
+//Button
+.menu-btn{
+    position: absolute;
+    z-index:3;
+    right:30px;
+    top:30px;
+    cursor: pointer;
+    @include easeOut;
+
+    .btn-line{
+        display: block;
+        width:30px;
+        height:4px;
+        margin : 0 0 5px 0;
+        background: white;
+        border: none;
+        @include easeOut;
+    }
+
+    .btn-line:hover{
+        background : $secondary-color;
+    }
+
+    &.close {
+        transform: rotate(180deg);
+        .btn-line{
+            &:nth-child(1){
+                transform: rotate(45deg) translate(5px,5px);
+            }
+
+            &:nth-child(2){
+                transform: translate(0,-19px);
+            }
+
+            &:nth-child(3){
+                transform: rotate(-45deg) translate(8px,-7px);
+            }
+        }
+    }
+}
+
+
+// Menu Overlay
+
+.menu {
+    position: fixed;
+    top:0;
+    width:100%;
+    opacity: 0.9;
+
+    visibility: hidden;
+
+    &.show{
+        visibility: visible;
+    }
+
+    &-nav,&-branding{
+        display:flex;
+        flex-flow:column wrap;
+        align-items: center;
+        justify-content: center;
+        float:left;
+        width:50%;
+        height:100vh;
+        overflow: hidden;
+    }
+}
