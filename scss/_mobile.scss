@@ -4,11 +4,11 @@
     
 
     h1,h2,h3{
-        font-weight: 600;
+        
     
         &.lg-heading{
             color: white;
-            font-size:8rem;
+            font-size:6rem;
         }
     
         &.sm-heading{
@@ -17,19 +17,36 @@
             padding: 0.2rem 1rem;
         }
     }
+
+    .projects{
+        grid-template-columns: repeat(4,1fr);
+    }
 }
     
 }
 
 @include mediaLg{
-    
+    main {
+        padding:6rem;
+        align-items:center;
+        text-align:center;
+
+        .lg-heading{
+            line-height: 1;
+            margin-bottom:1rem;
+        }
+
+    }
+    .projects{
+        grid-template-columns: repeat(3,1fr);
+    }   
 }
 
 @include mediaMd{
     main {
         align-items:center;
         text-align:center;
-        
+        padding:5rem 0;
 
         .lg-heading{
             line-height: 1;
@@ -84,8 +101,14 @@
        
     
     }
+
+    .projects{
+        grid-template-columns: repeat(2,1fr);
+    } 
 }
 
 @include mediaSm{
-
+    .projects{
+        grid-template-columns: 1fr;
+    } 
 }

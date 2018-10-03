@@ -26,14 +26,17 @@
         .btn-line{
             &:nth-child(1){
                 transform: rotate(45deg) translate(5px,5px);
+                background:white;
             }
 
             &:nth-child(2){
                 transform: translate(0,-19px);
+                background:white;
             }
 
             &:nth-child(3){
                 transform: rotate(-45deg) translate(8px,-7px);
+                background:white;
             }
         }
     }
@@ -66,7 +69,7 @@
     &-nav{
         margin : 0;
         padding : 0;
-        background: rgba(darken($primary-color, 5), 0.9);
+        background: rgba(darken($primary-color, 10), 0.9);
         list-style: none;
         transform: translate3d(100%,-100%,0);
         @include easeOut;
@@ -91,7 +94,7 @@
             background: url(../images/profile.jpg);
             background-size: 250px 250px;
             border-radius: 50%;
-            border : solid 3px $secondary-color;
+            border : solid 6px $secondary-color;
         }
 
     }
@@ -126,7 +129,7 @@
 }
 
 //Delay each nav-item slightly
-@for $x from 1 through 4 {
+@for $x from 1 through 5 {
     .nav-item:nth-child(#{$x}){
         transition-delay: $x * 0.2s;
     }
