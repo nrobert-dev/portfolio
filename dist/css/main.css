@@ -14,7 +14,7 @@
     border: none;
     transition: all 0.7s ease-out; }
   .menu-btn .btn-line:hover {
-    background: #a71111; }
+    background: #b32020; }
   .menu-btn.close {
     transform: rotate(180deg); }
     .menu-btn.close .btn-line:nth-child(1) {
@@ -64,7 +64,7 @@
       background: url(../images/profile.jpg);
       background-size: 250px 250px;
       border-radius: 50%;
-      border: solid 6px #a71111; }
+      border: solid 6px #b32020; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
     transition: all 0.7s ease-out; }
@@ -81,7 +81,7 @@
     text-decoration: none;
     transition: all 0.7s ease-out; }
     .menu .nav-link:hover {
-      color: #a71111; }
+      color: #b32020; }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.2s; }
@@ -147,7 +147,7 @@ h1, h2, h3 {
       border-bottom: 3px solid black;
       border-radius: 10px; }
     h1.sm-heading a:hover, h2.sm-heading a:hover, h3.sm-heading a:hover {
-      color: #a71111;
+      color: #b32020;
       font-size: 2.1rem;
       transition: all 0.7s ease-out; }
 
@@ -161,7 +161,7 @@ header {
   width: 100%; }
 
 .secondary {
-  color: #a71111; }
+  color: #b32020; }
 
 main {
   padding: 6rem 15rem;
@@ -171,7 +171,7 @@ main {
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
-        color: #a71111;
+        color: #b32020;
         transition: all 0.7s ease-out; }
   main#home {
     overflow: hidden; }
@@ -216,7 +216,7 @@ main {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    border: solid 3px #a71111; }
+    border: solid 3px #b32020; }
   .about-info .bio {
     grid-area: bio;
     font-size: 1.5rem; }
@@ -230,9 +230,9 @@ main {
     background: #545454;
     padding: 0.5rem;
     text-align: center;
-    border-bottom: #a71111 5px solid; }
+    border-bottom: #b32020 5px solid; }
     .about-info .job .skill-heading {
-      background: #a71111;
+      background: #b32020;
       padding: 1rem; }
 
 .projects {
@@ -244,31 +244,38 @@ main {
     border: 3px white solid; }
     .projects img:hover {
       opacity: 0.5;
-      border-color: #a71111;
+      border-color: #b32020;
       transition: all 0.7s ease-out; }
 
 .btn, .btn-dark, .btn-light {
   display: block;
   padding: 0.5rem 1rem;
   border: 0;
+  margin-top: 0.3rem;
   margin-bottom: 0.3rem; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
-    background-color: #a71111;
-    color: set-text-color(#a71111); }
+    background-color: #b32020;
+    color: set-text-color(#b32020); }
 
 .btn-dark {
   background: #212121;
   color: #fff; }
 
 .btn-light {
+  background: #212121;
+  color: #fff; }
+
+.item-description {
+  display: block;
   background: #6d6d6d;
-  color: #333; }
+  padding: 1rem;
+  color: white; }
 
 #main-footer {
   padding: 1rem;
   background: #2e2e2e;
   color: set-text-color(#474747);
-  color: #a71111;
+  color: #b32020;
   height: 60px;
   text-align: center; }
 
@@ -281,6 +288,17 @@ main {
   right: 0;
   bottom: 0;
   left: 0; }
+
+#blinking {
+  display: inline-block;
+  color: black;
+  animation: blink 1s infinite; }
+
+@keyframes blink {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 
 @media screen and (min-width: 1171px) {
   main {

@@ -10,9 +10,11 @@ var granimInstance = new Granim({
     states : {
         "default-state": {
             gradients: [
-                ['#F0F2F0', '#000C40'],
-                ['#000000', '#434343'],
-                ['#3a6186','#89253e']
+                ['#64b3f4', '#726758'],
+                ['#f4fffd', '#6b6d5e'],
+                ['#FF512F','#05382f'],
+                ['#001c5e','#c69531'],
+                ['#FF512F','#05382f']
                
                
             ],
@@ -30,18 +32,39 @@ setInterval(function(){
     if (active == colors.length) active = 0;
 }, 4000);
 
-/*
-var bg = document.getElementById('hh');
+
+let familyName = "Nechitelea";
+let surName = "Robert";
+
+let fullNameElement = document.querySelector("#hh");
 
 
-bg.addEventListener('mousemove',function(event){
-    event.preventDefault();
-    let deltaX = event.movementX;
-    let deltaY = event.movementY;
+let typeSpeed = 100;
+let i=0;
+let j=0;
 
-    let moveX = ((window.innerWidth/2) - deltaX) * 0.1;
-    let moveY = ((window.innerHeight/2) - deltaY) * 0.1;
+function type(){
+    if(i==0){
+        fullNameElement.innerHTML="";
+    }
+    if(i<familyName.length){
+        fullNameElement.textContent+=familyName.charAt(i);
+        i++;
+        setTimeout(type,typeSpeed);
+    }
+    else if(i==familyName.length){
+        fullNameElement.innerHTML+=' <span class="secondary" id="animated-name"></span><span id="blinking">_</span>';
+        typeSurName(document.querySelector('#animated-name'));
+        i++;
+    }   
+}
 
-    bg.style.marginLeft = moveX + "px";
-    bg.style.marginTop = moveY + "px";
-})*/
+function typeSurName(surNameElement){
+    if(j<surName.length){
+        surNameElement.textContent+=surName.charAt(j);
+        j++;
+        setTimeout(function(){typeSurName(surNameElement)},typeSpeed);
+    }
+}
+
+setTimeout(type,1500);
