@@ -50,9 +50,10 @@ h1,h2,h3{
     &.sm-heading{
         margin-bottom : 2rem;
         padding: 0.2rem 1rem;
+        color:white;
 
         a{
-            color:black;
+          color:black;
           background :white;
           opacity: 0.6;
           font-size: 2rem;
@@ -87,7 +88,6 @@ header {
 
 main {
     padding: 6rem 15rem;
-    //height: 100%;
     min-height:calc(100vh - 60px);
 
     .icons{
@@ -108,6 +108,13 @@ main {
         h1 { margin-top : 20vh;}
     }
 }
+
+#digital{
+    margin:0;
+    padding:2rem 6rem;
+    background: darken($primary-color,10);
+}
+
 
 .about-info{
     color: white;
@@ -152,7 +159,7 @@ main {
     .job-3{ grid-area:job3;}
     
     .job{
-        background: lighten($primary-color,5);
+        background: lighten($primary-color,10);
         padding:0.5rem;
         text-align: center;
         border-bottom: $secondary-color 5px solid;
@@ -172,13 +179,21 @@ main {
 
     img{
         width:100%;
-        border: 3px white solid;
+        
 
         &:hover{
             opacity: 0.5;
-            border-color:$secondary-color;
             @include easeOut;
         }
+    }
+}
+
+
+.item:hover{
+    overflow: hidden;
+    img{
+        transform: scale(1.05);
+
     }
 }
 
@@ -193,6 +208,7 @@ main {
     &:hover{
         background-color:$secondary-color;
         color : set-text-color($secondary-color);
+        @include easeOut;
     }
 }
 
@@ -206,17 +222,57 @@ main {
 
 .btn-light{
     @extend .btn;
-    background: darken($primary-color, 15);
+    background: lighten($primary-color, 30);
     color : #fff;
 }
+
+
 
 .item-description{
     display:block;
     background: lighten($primary-color, 15);
     padding:1rem;
     color:white;
+    height:250px;
+
+}
 
 
+//Image grid for 3D Projects
+.grid{
+    line-height:0;
+    column-count: 2;
+    column-gap: 0;
+
+    .grid-item{
+        border:1px solid black;
+        width: 100% !important;
+        height: auto !important;    
+    }
+
+    .grid-item:hover{
+        transform: scale(1.2);
+        opacity: 0.9;
+        @include easeOut;
+    }
+}
+
+
+//Contact page css
+.contact{
+    background: lighten($primary-color,10);
+    text-align: center;
+    margin-top : 10rem;
+    padding:2rem;
+
+    p{
+        color:white;
+        font-weight: 600;
+        font-size:1.5rem;
+    }
+    i{
+        margin: 0 10px;
+    }
 }
 
 #main-footer{

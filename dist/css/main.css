@@ -46,7 +46,7 @@
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: rgba(46, 46, 46, 0.9);
+    background: rgba(19, 19, 19, 0.9);
     list-style: none;
     transform: translate3d(100%, -100%, 0);
     transition: all 0.7s ease-out; }
@@ -54,7 +54,7 @@
       transform: translate3d(0, 0, 0); }
   .menu-branding {
     transform: translate3d(-100%, 100%, 0);
-    background: rgba(71, 71, 71, 0.9);
+    background: rgba(44, 44, 44, 0.9);
     transition: all 0.7s ease-out; }
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
@@ -70,6 +70,8 @@
     transition: all 0.7s ease-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
+    .menu .nav-item.current a {
+      color: #b32020; }
   .menu .nav-link {
     display: inline-block;
     position: relative;
@@ -102,7 +104,7 @@
   box-sizing: border-box; }
 
 body {
-  background: #474747;
+  background: #2c2c2c;
   font-family: 'Chakra Petch', sans-serif;
   height: 100%;
   margin: 0;
@@ -138,7 +140,8 @@ h1, h2, h3 {
     background: gray; }
   h1.sm-heading, h2.sm-heading, h3.sm-heading {
     margin-bottom: 2rem;
-    padding: 0.2rem 1rem; }
+    padding: 0.2rem 1rem;
+    color: white; }
     h1.sm-heading a, h2.sm-heading a, h3.sm-heading a {
       color: black;
       background: white;
@@ -177,6 +180,11 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+
+#digital {
+  margin: 0;
+  padding: 2rem 6rem;
+  background: #131313; }
 
 .about-info {
   color: white;
@@ -227,7 +235,7 @@ main {
   .about-info .job-3 {
     grid-area: job3; }
   .about-info .job {
-    background: #545454;
+    background: #464646;
     padding: 0.5rem;
     text-align: center;
     border-bottom: #b32020 5px solid; }
@@ -240,12 +248,15 @@ main {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 0.7rem; }
   .projects img {
-    width: 100%;
-    border: 3px white solid; }
+    width: 100%; }
     .projects img:hover {
       opacity: 0.5;
-      border-color: #b32020;
       transition: all 0.7s ease-out; }
+
+.item:hover {
+  overflow: hidden; }
+  .item:hover img {
+    transform: scale(1.05); }
 
 .btn, .btn-dark, .btn-light {
   display: block;
@@ -255,26 +266,53 @@ main {
   margin-bottom: 0.3rem; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
     background-color: #b32020;
-    color: set-text-color(#b32020); }
+    color: set-text-color(#b32020);
+    transition: all 0.7s ease-out; }
 
 .btn-dark {
-  background: #212121;
+  background: #060606;
   color: #fff; }
 
 .btn-light {
-  background: #212121;
+  background: #797979;
   color: #fff; }
 
 .item-description {
   display: block;
-  background: #6d6d6d;
+  background: #525252;
   padding: 1rem;
-  color: white; }
+  color: white;
+  height: 250px; }
+
+.grid {
+  line-height: 0;
+  column-count: 2;
+  column-gap: 0; }
+  .grid .grid-item {
+    border: 1px solid black;
+    width: 100% !important;
+    height: auto !important; }
+  .grid .grid-item:hover {
+    transform: scale(1.2);
+    opacity: 0.9;
+    transition: all 0.7s ease-out; }
+
+.contact {
+  background: #464646;
+  text-align: center;
+  margin-top: 10rem;
+  padding: 2rem; }
+  .contact p {
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem; }
+  .contact i {
+    margin: 0 10px; }
 
 #main-footer {
   padding: 1rem;
-  background: #2e2e2e;
-  color: set-text-color(#474747);
+  background: #131313;
+  color: set-text-color(#2c2c2c);
   color: #b32020;
   height: 60px;
   text-align: center; }
@@ -307,11 +345,13 @@ main {
       color: white;
       font-size: 6rem; }
     main h1.sm-heading, main h2.sm-heading, main h3.sm-heading {
-      color: white;
       margin-bottom: 3rem;
       padding: 0.2rem 1rem; }
     main .projects {
-      grid-template-columns: repeat(4, 1fr); } }
+      grid-template-columns: repeat(4, 1fr); }
+  .about-info .bio-image {
+    height: 300px;
+    width: 300px; } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   main {
@@ -320,7 +360,12 @@ main {
     text-align: center; }
     main .lg-heading {
       line-height: 1;
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem;
+      font-size: 5rem; }
+    main .lg-heading-about {
+      line-height: 1;
+      margin-bottom: 1rem;
+      font-size: 5rem; }
   .projects {
     grid-template-columns: repeat(3, 1fr); } }
 
@@ -331,7 +376,10 @@ main {
     padding: 5rem 0; }
     main .lg-heading {
       line-height: 1;
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem;
+      font-size: 4rem; }
+    main .lg-heading-about {
+      font-size: 4rem; }
   ul.menu-nav, div.menu-branding {
     float: none;
     width: 100%;
@@ -356,7 +404,9 @@ main {
     .about-info .bio-image {
       margin: 0 auto; }
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+  .grid {
+    column-count: 1; } }
 
 @media screen and (max-width: 500px) {
   .projects {
