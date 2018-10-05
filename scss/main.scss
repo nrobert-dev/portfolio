@@ -88,7 +88,7 @@ header {
 
 main {
     padding: 6rem 15rem;
-    min-height:calc(100vh - 60px);
+    min-height:calc(100vh - 80px);
 
     .icons{
         margin-top:1rem;
@@ -280,11 +280,14 @@ main {
     background:darken($primary-color,10);
     color:set-text-color($primary-color);
     color:$secondary-color;
-    height:60px;
+    height:80px;
     text-align: center;
 }
 
 #canvas-image-blending {
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center; 
     position: absolute;
     z-index: -1;
     width: 100%;

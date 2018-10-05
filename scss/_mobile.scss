@@ -127,7 +127,38 @@
 }
 
 @include mediaSm{
+
+    h1,h2,h3{
+        font-size:1rem;
+    }
+    main {
+        align-items:center;
+        text-align:center;
+        padding:2rem 0;
+
+        .lg-heading{
+            line-height: 1;
+            margin-bottom:1rem;
+            font-size:2rem;
+        }
+
+        .lg-heading-about{
+            font-size:2rem;
+        }
+
+    }
     .projects{
         grid-template-columns: 1fr;
     } 
+
+    footer{
+        .icons { 
+                font-size:0.8rem;
+        }
+    }
+
+    #digital{
+        padding:1rem 0;
+        overflow: hidden;
+    }
 }

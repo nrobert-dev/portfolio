@@ -5,7 +5,7 @@ var granimInstance = new Granim({
     isPausedWhenNotInView: true,
     image : {
         source: 'images/bg3.jpg',
-        blendingMode: 'overlay'
+        blendingMode: 'multiply'
     },
     states : {
         "default-state": {

@@ -4,11 +4,15 @@
   "description": "my portfolio",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Nechitelea Robert",
   "license": "MIT",
+  "homepage": "https://thunderent.github.io/myPortfolio",
   "dependencies": {
+    "dig": "0.0.6",
+    "gh-pages": "^2.0.1",
     "granim": "^1.1.1",
     "i": "^0.3.6",
     "node-sass": "^4.9.3"
