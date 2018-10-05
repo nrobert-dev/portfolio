@@ -110,7 +110,7 @@ body {
   margin: 0;
   line-height: 1.5; }
   body#bg-img {
-    background: url(../images/bg2.jpg);
+    background: #131313;
     background-attachment: fixed;
     background-size: cover; }
 
@@ -168,7 +168,7 @@ header {
 
 main {
   padding: 6rem 15rem;
-  min-height: calc(100vh - 60px); }
+  min-height: calc(100vh - 80px); }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -314,10 +314,14 @@ main {
   background: #131313;
   color: set-text-color(#2c2c2c);
   color: #b32020;
-  height: 60px;
+  height: 80px;
   text-align: center; }
 
 #canvas-image-blending {
+  background-size: cover;
+  /* <------ */
+  background-repeat: no-repeat;
+  background-position: center center;
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -409,5 +413,22 @@ main {
     column-count: 1; } }
 
 @media screen and (max-width: 500px) {
+  h1, h2, h3 {
+    font-size: 1rem; }
+  main {
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+      font-size: 2rem; }
+    main .lg-heading-about {
+      font-size: 2rem; }
   .projects {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  footer .icons {
+    font-size: 0.8rem; }
+  #digital {
+    padding: 1rem 0;
+    overflow: hidden; } }
