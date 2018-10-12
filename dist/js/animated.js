@@ -1,30 +1,25 @@
-var granimInstance = new Granim({
-    element: '#canvas-image-blending',
-    direction: 'top-bottom',
-    opacity: [1, 1],
-    isPausedWhenNotInView: true,
-    image : {
-        source: 'images/bg3.jpg',
-        blendingMode: 'multiply'
-    },
-    states : {
-        "default-state": {
-            gradients: [
-                ['#64b3f4', '#726758'],
-                ['#f4fffd', '#6b6d5e'],
-                ['#FF512F','#05382f'],
-                ['#001c5e','#c69531'],
-                ['#FF512F','#05382f']
-               
-               
-            ],
-            transitionSpeed: 8000
-        }
-    }
-});
+$('body').vegas({
+    overlay: true,
+    transition: 'fade', 
+    transitionDuration: 4000,
+    delay: 16000,
+    animation: 'random',
+    animationDuration: 20000,
+    slides: [
+      { src: './images/3d/enviro/enviro (3).jpg' },
+      {src:'./images/codebg.jpg'},
+      {src:'./images/3d/cat.jpg'},
+      { src: './images/3d/enviro/enviro (11).jpg' },
+      {src:'./images/3d/enviro/enviro 13.jpg'},
+      {src:'./images/3d/merchant.jpg'}
+      
+    ]
+  });
 
 
-var colors = ['#c31432','#00F260', '#F0F2F0','#f64f59', '#000000','#f71616'];
+
+
+var colors = ['#c31432','#00F260', '#ff9900','#f64f59', '#00c400','#0059ff'];
 var active = 0;
 setInterval(function(){
     document.getElementById('animated-name').style.color = colors[active];
